@@ -4,5 +4,7 @@
 
 Something similar to how movies are shot these days 
 
+Works best on Chrome - not tested for other platforms
+
 
 Demo @ https://rahulgolwalkar.github.io/chroma-key-ads/
