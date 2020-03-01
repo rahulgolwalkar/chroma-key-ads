@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: black;
+        color:#CCCCCC;
+      }
+      #c2 {
+        background-image: url(media/bg1.png);
+        background-repeat: repeat;
+      }
+      #c3 {
+        background-image: url(media/bg2.png);
+        background-repeat: repeat;
+      }
+      div {
+        float: left;
+        /*border :1px solid #444444;*/
+        padding:10px;
+        margin: 10px;
+        /*background:#3B3B3B;*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style = "width:100%">
+      <h1>Original Video (some noise)</h1> <h5>Best viewed at 50% zoom</h5>
+      <video id="video" src="media/video.mp4" controls="true" loop="true"/>
+      <br /><br /><br /><br /><br />
+    </div>
+    <div style = "width:100%">
+      <select style="font-size: 35px;" id="countrySelector">
+        <option>Singapore</option>
+        <option>US</option>
+      </select>
+    </div>
+    <div style = "width:100%">
+      <canvas id="c1" width="1920" height="1080" hidden="true"></canvas> <br />
+
+      <h1 id="header1">Video seen by user in Singapore who loves MMA and loves online networking</h1>
+      <canvas id="c2" width="1920" height="1080"></canvas>
+
+      <br /><br /><br /><br />
+
+      <canvas id="c3" width="1920" height="1080" hidden="true"></canvas>
+    </div>
+  <script type="text/javascript" src="processor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#countrySelector').on('change', function() {
+        if($(this).val() === "Singapore") {
+          $("#c2").css('background-image', 'url(media/bg1.png)');
+          $("#header1").text("Video seen by user in Singapore who loves MMA and loves online networking");
+        }else{
+          $("#c2").css('background-image', 'url(media/bg2.png)');
+          $("#header1").text("Video seen by user in United States who loves music and watches a lot of news");
+
+        }
+
+      });
+    });
+  </script>
+  </body>
+</html>
